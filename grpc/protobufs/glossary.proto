@@ -1,0 +1,36 @@
+syntax = "proto3";
+
+package terms;
+
+service TermsService {
+  rpc GetAllTerms (Empty) returns (TermList) {}
+  rpc CreateTerm (CreateTermRequest) returns (Term) {}
+  rpc UpdateTerm (UpdateTermRequest) returns (Term) {}
+}
+
+message Empty {}
+
+message Term {
+  string title = 1;
+  string definition = 2;
+  string source_link = 3;
+}
+
+message TermUpdate {
+  string definition = 1;
+  string source_link = 2;
+}
+
+message TermList {
+  map<string, Term> terms = 1;
+}
+
+message CreateTermRequest {
+  string keyword = 1;
+  Term term = 2;
+}
+
+message UpdateTermRequest {
+  string keyword = 1;
+  TermUpdate term_update = 2;
+}

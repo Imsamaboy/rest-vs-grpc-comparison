@@ -1,0 +1,12 @@
+fastapi==0.115.6
+uvicorn==0.32.1
+
+pydantic==2.10.3
+pydantic_core==2.27.1
+typing_extensions==4.12.2
+
+grpcio==1.59.3
+grpcio-tools==1.59.3
+protobuf==4.25.1
+
+locust==2.20.1
